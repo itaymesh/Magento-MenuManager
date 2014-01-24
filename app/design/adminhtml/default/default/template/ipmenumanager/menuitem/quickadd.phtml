@@ -1,0 +1,8 @@
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend">Create New Menu Item</h4>
+    </div>
+    <fieldset>
+        <button class="scalable add" type="button" title="Create New Menu Item" onclick="setLocation('<?php echo $this->getUrl('*/adminhtml_menuitem/new', array('menuid' => $this->getRequest()->getParam('id'))); ?>')"><span><span>Create New Menu Item</span></span></button>
+    </fieldset>
+</div>

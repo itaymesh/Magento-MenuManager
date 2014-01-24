@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <InverseParadox_MenuManager>
+            <active>true</active>
+            <codePool>local</codePool>
+        </InverseParadox_MenuManager>
+    </modules>
+</config>

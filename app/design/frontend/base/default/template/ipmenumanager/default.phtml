@@ -1,0 +1,7 @@
+<?php if ($this->hasValidMenu()): ?>
+<ul>
+    <?php foreach ($this->getMenuitems() as $item): ?>
+        <?php echo $item->renderItem(); ?>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>

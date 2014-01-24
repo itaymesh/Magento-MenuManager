@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+		<cms>
+			<children>
+				<ipmenumanager translate="title" module="ipmenumanager">
+					<title>Menu Manager</title>
+					<sort_order>24</sort_order>
+					<action>ipmenumanager_admin/adminhtml_menu</action>
+				</ipmenumanager>
+			</children>
+		</cms>
+	</menu>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<cms>
+						<children>
+							<ipmenumanager translate="title" module="ipmenumanager">
+								<title>Menu Manager</title>
+								<sort_order>120</sort_order>
+								<children>
+									<menu translate="title">
+										<title>Manage Menus</title>
+										<sort_order>6</sort_order>
+									</menu>
+									<menuitem translate="title">
+										<title>Manage Items</title>
+										<sort_order>11</sort_order>
+									</menuitem>
+									<settings translate="title">
+										<title>Settings</title>
+										<sort_order>99</sort_order>
+									</settings>
+								</children>
+							</ipmenumanager>
+						</children>
+					</cms>
+					<system>
+						<children>
+							<config>
+								<children>
+									<ipmenumanager translate="title" module="ipmenumanager">
+										<title>Menu Manager</title>
+										<sort_order>990</sort_order>
+									</ipmenumanager>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

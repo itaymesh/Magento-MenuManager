@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<layout>
+
+    <ipmenumanager_admin_adminhtml_menu_index>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="ipmenumanager"><title>Manage Menus</title></action>
+        </reference>
+        <reference name="content">
+            <block type="ipmenumanager/adminhtml_menu" name="menus" />
+        </reference>
+    </ipmenumanager_admin_adminhtml_menu_index>
+
+    <ipmenumanager_admin_adminhtml_menu_edit>
+        <update handle="ipmenumanager_default" />
+        <reference name="left">
+            <block type="ipmenumanager/adminhtml_menu_edit_tabs" name="menu.tabs" />
+        </reference>
+        <reference name="content">
+            <block type="ipmenumanager/adminhtml_menu_edit" name="menus">
+            </block>
+        </reference>
+    </ipmenumanager_admin_adminhtml_menu_edit>
+
+    <ipmenumanager_admin_adminhtml_menuitem_index>
+        <reference name="head">
+            <action method="setTitle" translate="title" module="ipmenumanager"><title>Manage Menu Items</title></action>
+        </reference>
+        <reference name="content">
+            <block type="ipmenumanager/adminhtml_menuitem" name="item" />
+        </reference>
+    </ipmenumanager_admin_adminhtml_menuitem_index>
+
+    <ipmenumanager_admin_adminhtml_menuitem_edit>
+        <update handle="ipmenumanager_default" />
+        <reference name="left">
+            <block type="ipmenumanager/adminhtml_menuitem_edit_tabs" name="items.tabs" />
+        </reference>
+        <reference name="content">
+            <block type="ipmenumanager/adminhtml_menuitem_edit" name="items" />
+        </reference>
+    </ipmenumanager_admin_adminhtml_menuitem_edit>
+
+</layout>
