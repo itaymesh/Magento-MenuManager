@@ -63,8 +63,8 @@ class InverseParadox_MenuManager_Block_Adminhtml_Menuitem_Edit_Tab_Form extends 
 
 		$cat_id = $fieldset->addField('cat_id', 'select', array(
 			'name' 		=> 'cat_id',
-			'label' 	=> $this->__('Category ID'),
-			'title' 	=> $this->__('Category ID'),
+			'label' 	=> $this->__('Cms Page'),
+			'title' 	=> $this->__('Cms Page'),
 			'values'    => Mage::getModel('cms/page')->getCollection()->toOptionArray()
 		));
 
