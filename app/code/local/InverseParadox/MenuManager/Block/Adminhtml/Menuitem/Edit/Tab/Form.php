@@ -165,7 +165,7 @@ class InverseParadox_MenuManager_Block_Adminhtml_Menuitem_Edit_Tab_Form extends 
 		$options = array(
 			'' => $this->__('-- Please Select --'),
 			'url' => 'URL',
-            'category' => 'Category',
+            'category' => 'Page',
             'customer/account' => 'Customer Account',
             'customer/account/login' => 'Login',
             'customer/account/logout' => 'Logout',
