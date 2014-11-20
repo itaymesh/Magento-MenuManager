@@ -1,0 +1,5 @@
+app/code/local/InverseParadox/MenuManager                                                app/code/local/InverseParadox/MenuManager
+app/design/adminhtml/default/default/layout/ipmenumanager.xml                            app/design/adminhtml/default/default/layout/ipmenumanager.xml
+app/design/adminhtml/default/default/template/ipmenumanager/                             app/design/adminhtml/default/default/template/ipmenumanager/
+app/design/frontend/base/default/template/ipmenumanager/                                 app/design/frontend/base/default/template/ipmenumanager/
+app/etc/modules/InverseParadox_MenuManager.xml                                           app/etc/modules/InverseParadox_MenuManager.xml
