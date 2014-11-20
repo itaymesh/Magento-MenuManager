@@ -110,7 +110,10 @@ class InverseParadox_MenuManager_Model_Menuitem extends Mage_Core_Model_Abstract
 	{
 		if (!$this->getData('category_url')) {
 			if ($this->getData('cat_id')) {
-				$url = Mage::getModel('catalog/category')->load($this->getData('cat_id'))->getUrl();
+				if ($page = Mage::getModel('cms/page')->load($this->getData('cat_id'))) {
+
+				}
+				$url = Mage::getUrl($this->getData('cat_id'));
 				$this->setData('category_url', $url);
 			}
 		}

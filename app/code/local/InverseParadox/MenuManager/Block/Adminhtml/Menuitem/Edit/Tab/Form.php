@@ -61,10 +61,11 @@ class InverseParadox_MenuManager_Block_Adminhtml_Menuitem_Edit_Tab_Form extends 
 			'title' 	=> $this->__('URL')
 		));
 
-		$cat_id = $fieldset->addField('cat_id', 'text', array(
+		$cat_id = $fieldset->addField('cat_id', 'select', array(
 			'name' 		=> 'cat_id',
 			'label' 	=> $this->__('Category ID'),
-			'title' 	=> $this->__('Category ID')
+			'title' 	=> $this->__('Category ID'),
+			'values'    => Mage::getModel('cms/page')->getCollection()->toOptionArray()
 		));
 
 		$fieldset->addField('parent', 'select', array(
@@ -110,11 +111,11 @@ class InverseParadox_MenuManager_Block_Adminhtml_Menuitem_Edit_Tab_Form extends 
                 $type->getName(),
                 'category'
             )
-            ->addFieldDependence(
+           /* ->addFieldDependence(
                 $cat_id->getName(),
                 $type->getName(),
                 'category_children'
-            )
+            )*/
         );
 
 		if ($item = Mage::registry('ipmenumanager_menuitem')) {
