@@ -1,0 +1,13 @@
+{
+    "name": "itaymesh/Magento-MenuManager",
+    "description": "Magento MenuManager",
+    "type": "magento-module",
+    "homepage": "https://github.com/itaymesh/Magento-MenuManager",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Studio Raz",
+            "email": "team@studioraz.co.il"
+        }
+    ]
+}
