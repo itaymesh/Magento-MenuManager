@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <config>
 	<tabs>
-		<inverseparadox translate="label" module="ipmenumanager">
+		<studioraz translate="label" module="ipmenumanager">
 			<label>Studioraz</label>
 			<sort_order>200</sort_order>
-		</inverseparadox>
+		</studioraz>
 	</tabs>
     <sections>
         <ipmenumanager translate="label" module="ipmenumanager">
             <label>Menu Manager</label>
-            <tab>inverseparadox</tab>
+            <tab>studioraz</tab>
             <sort_order>600</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
