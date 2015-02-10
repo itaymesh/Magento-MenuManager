@@ -1,4 +1,4 @@
-app/code/local/InverseParadox/                                                           app/code/local/InverseParadox/
+app/code/local/Studioraz/                                                           app/code/local/Studioraz/
 app/design/adminhtml/default/default/layout/ipmenumanager.xml                            app/design/adminhtml/default/default/layout/ipmenumanager.xml
 app/design/adminhtml/default/default/template/ipmenumanager/                             app/design/adminhtml/default/default/template/ipmenumanager/
 app/design/frontend/base/default/template/ipmenumanager/                                 app/design/frontend/base/default/template/ipmenumanager/
