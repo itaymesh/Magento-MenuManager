@@ -2,7 +2,7 @@
 <config>
 	<tabs>
 		<inverseparadox translate="label" module="ipmenumanager">
-			<label>Inverse Paradox</label>
+			<label>Studioraz</label>
 			<sort_order>200</sort_order>
 		</inverseparadox>
 	</tabs>
