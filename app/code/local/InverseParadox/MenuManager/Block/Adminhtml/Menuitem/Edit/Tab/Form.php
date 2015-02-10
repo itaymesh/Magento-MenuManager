@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Block_Adminhtml_Menuitem_Edit_Tab_Form extends Mage_Adminhtml_Block_Widget_Form
+class Studioraz_MenuManager_Block_Adminhtml_Menuitem_Edit_Tab_Form extends Mage_Adminhtml_Block_Widget_Form
 {
 
 	protected function _prepareForm()

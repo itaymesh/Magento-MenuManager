@@ -1,5 +1,5 @@
 <?php
-class InverseParadox_MenuManager_Block_Adminhtml_Menuitem extends Mage_Adminhtml_Block_Widget_Grid_Container
+class Studioraz_MenuManager_Block_Adminhtml_Menuitem extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
 	public function __construct()
 	{

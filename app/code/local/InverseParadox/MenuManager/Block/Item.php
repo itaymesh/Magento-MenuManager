@@ -1,5 +1,5 @@
 <?php
-class InverseParadox_MenuManager_Block_Item extends Mage_Core_Block_Template
+class Studioraz_MenuManager_Block_Item extends Mage_Core_Block_Template
 {
 
     public function setItem($item)

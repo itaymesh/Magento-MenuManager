@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Model_Mysql4_Menu extends Mage_Core_Model_Mysql4_Abstract
+class Studioraz_MenuManager_Model_Mysql4_Menu extends Mage_Core_Model_Mysql4_Abstract
 {
 	public function _construct()
 	{
@@ -31,10 +31,10 @@ class InverseParadox_MenuManager_Model_Mysql4_Menu extends Mage_Core_Model_Mysql
 	/**
 	 * Retrieve a collection of items associated with the menu
 	 *
-	 * @param InverseParadox_MenuManager_Model_Menu $menu
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection
+	 * @param Studioraz_MenuManager_Model_Menu $menu
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection
 	 */
-	public function getMenuitemCollection(InverseParadox_MenuManager_Model_Menu $menu, $parent = 0, $includeDisabled = false)
+	public function getMenuitemCollection(Studioraz_MenuManager_Model_Menu $menu, $parent = 0, $includeDisabled = false)
 	{
 		$items = Mage::getResourceModel('ipmenumanager/menuitem_collection')
 			->addMenuIdFilter($menu->getId())
@@ -51,10 +51,10 @@ class InverseParadox_MenuManager_Model_Mysql4_Menu extends Mage_Core_Model_Mysql
 	/**
 	 * Retrieve a collection of items associated with the menu
 	 *
-	 * @param InverseParadox_MenuManager_Model_Menu $menu
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection
+	 * @param Studioraz_MenuManager_Model_Menu $menu
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection
 	 */
-	public function getFlatMenuitemCollection(InverseParadox_MenuManager_Model_Menu $menu, $includeDisabled = false)
+	public function getFlatMenuitemCollection(Studioraz_MenuManager_Model_Menu $menu, $includeDisabled = false)
 	{
 		$items = Mage::getResourceModel('ipmenumanager/menuitem_collection')
 			->addMenuIdFilter($menu->getId())

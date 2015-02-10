@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Model_Menuitem extends Mage_Core_Model_Abstract
+class Studioraz_MenuManager_Model_Menuitem extends Mage_Core_Model_Abstract
 {
 	public function _construct()
 	{
@@ -10,7 +10,7 @@ class InverseParadox_MenuManager_Model_Menuitem extends Mage_Core_Model_Abstract
 	/**
 	 * Retrieve the menu model associated with the item
 	 *
-	 * @return InverseParadox_MenuManager_Model_Menu|false
+	 * @return Studioraz_MenuManager_Model_Menu|false
 	 */
 	public function getMenu()
 	{
@@ -24,7 +24,7 @@ class InverseParadox_MenuManager_Model_Menuitem extends Mage_Core_Model_Abstract
 	/**
 	 * Retrieve parent model item
 	 *
-	 * @return InverseParadox_MenuManager_Model_Menuitem
+	 * @return Studioraz_MenuManager_Model_Menuitem
 	 */
 	public function getParentItem()
 	{

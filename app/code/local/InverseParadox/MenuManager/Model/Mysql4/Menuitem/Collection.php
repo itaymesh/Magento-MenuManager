@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract
+class Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract
 {
 	public function _construct()
 	{
@@ -10,7 +10,7 @@ class InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection extends Mage_C
 	/**
 	 * Init collection select
 	 *
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection
 	*/
 	protected function _initSelect()
 	{
@@ -23,7 +23,7 @@ class InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection extends Mage_C
 	 * Filter the collection by a menu ID
 	 *
 	 * @param int $menuId
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection
 	 */
 	public function addMenuIdFilter($menuId)
 	{
@@ -34,7 +34,7 @@ class InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection extends Mage_C
 	 * Filter the collection by parent
 	 *
 	 * @param int $parent
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection
 	 */
 	public function addParentFilter($parent_id)
 	{
@@ -45,7 +45,7 @@ class InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection extends Mage_C
 	 * Filter the collection by enabled items
 	 *
 	 * @param int $isEnabled = true
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection
 	 */
 	public function addIsEnabledFilter($isEnabled = true)
 	{
@@ -55,7 +55,7 @@ class InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection extends Mage_C
 	/**
 	 * Add order by sort order
 	 *
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection
 	*/
 	public function addOrderBySortOrder($dir = 'ASC')
 	{

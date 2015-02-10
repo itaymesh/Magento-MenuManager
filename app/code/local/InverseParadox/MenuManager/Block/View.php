@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Block_View extends Mage_Core_Block_Template
+class Studioraz_MenuManager_Block_View extends Mage_Core_Block_Template
 {
 
 	/**
@@ -49,7 +49,7 @@ class InverseParadox_MenuManager_Block_View extends Mage_Core_Block_Template
 	/**
 	 * Retrieve a collection of items
 	 *
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection
 	 */
 	public function getMenuitems()
 	{
@@ -59,7 +59,7 @@ class InverseParadox_MenuManager_Block_View extends Mage_Core_Block_Template
 	/**
 	 * If a template isn't passed in the XML, set the default template
 	 *
-	 * @return InverseParadox_MenuManager_Block_View
+	 * @return Studioraz_MenuManager_Block_View
 	 */
 	protected function _beforeToHtml()
 	{

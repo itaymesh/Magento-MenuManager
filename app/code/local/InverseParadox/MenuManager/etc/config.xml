@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <config>
 	<modules>
-		<InverseParadox_MenuManager>
+		<Studioraz_MenuManager>
 			<version>0.1.2</version>
-		</InverseParadox_MenuManager>
+		</Studioraz_MenuManager>
 	</modules>
 	<global>
 		<helpers>
 			<ipmenumanager>
-				<class>InverseParadox_MenuManager_Helper</class>
+				<class>Studioraz_MenuManager_Helper</class>
 			</ipmenumanager>
 		</helpers>
 		<blocks>
 			<ipmenumanager>
-				<class>InverseParadox_MenuManager_Block</class>
+				<class>Studioraz_MenuManager_Block</class>
 			</ipmenumanager>
 		</blocks>
 		<models>
 			<ipmenumanager>
-				<class>InverseParadox_MenuManager_Model</class>
+				<class>Studioraz_MenuManager_Model</class>
 				<resourceModel>ipmenumanager_mysql4</resourceModel>
 			</ipmenumanager>
 			<ipmenumanager_mysql4>
-				<class>InverseParadox_MenuManager_Model_Mysql4</class>
+				<class>Studioraz_MenuManager_Model_Mysql4</class>
 				<entities>
 					<menuitem>
 						<table>ipmenumanager_menuitem</table>
@@ -36,8 +36,8 @@
 		<resources>
 			<ipmenumanager_setup>
 				<setup>
-					<module>InverseParadox_MenuManager</module>
-					<class>InverseParadox_MenuManager_Model_Resource_Mysql4_Setup</class>
+					<module>Studioraz_MenuManager</module>
+					<class>Studioraz_MenuManager_Model_Resource_Mysql4_Setup</class>
 				</setup>
 				<connection>
 					<use>core_setup</use>
@@ -69,7 +69,7 @@
 			<ipmenumanager_admin>
 				<use>admin</use>
 				<args>
-					<module>InverseParadox_MenuManager</module>
+					<module>Studioraz_MenuManager</module>
 					<frontName>admin_ipmenumanager</frontName>
 				</args>
 			</ipmenumanager_admin>

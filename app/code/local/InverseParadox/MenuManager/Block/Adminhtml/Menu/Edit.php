@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Block_Adminhtml_Menu_Edit  extends Mage_Adminhtml_Block_Widget_Form_Container
+class Studioraz_MenuManager_Block_Adminhtml_Menu_Edit  extends Mage_Adminhtml_Block_Widget_Form_Container
 {
 	public function __construct()
 	{

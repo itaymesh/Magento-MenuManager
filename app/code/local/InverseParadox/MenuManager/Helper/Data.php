@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Helper_Data extends Mage_Core_Helper_Abstract
+class Studioraz_MenuManager_Helper_Data extends Mage_Core_Helper_Abstract
 {
 	/**
 	 * Determine whether the extension is enabled

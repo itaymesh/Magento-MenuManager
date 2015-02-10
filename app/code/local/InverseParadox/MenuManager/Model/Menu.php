@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Model_Menu extends Mage_Core_Model_Abstract
+class Studioraz_MenuManager_Model_Menu extends Mage_Core_Model_Abstract
 {
 	public function _construct()
 	{
@@ -11,7 +11,7 @@ class InverseParadox_MenuManager_Model_Menu extends Mage_Core_Model_Abstract
 	 * Load the model based on the code field
 	 *
 	 * @param string $code
-	 * @return InverseParadox_MenuManager_Model_Menu
+	 * @return Studioraz_MenuManager_Model_Menu
 	 */
 	public function loadByCode($code)
 	{
@@ -31,7 +31,7 @@ class InverseParadox_MenuManager_Model_Menu extends Mage_Core_Model_Abstract
 	/**
 	 * Retrieve a collection of items associated with this menu
 	 *
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem_Collection
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem_Collection
 	 */
 	public function getMenuitemCollection($includeDisabled = false, $parent = 0)
 	{

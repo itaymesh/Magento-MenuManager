@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Model_Mysql4_Menuitem extends Mage_Core_Model_Mysql4_Abstract
+class Studioraz_MenuManager_Model_Mysql4_Menuitem extends Mage_Core_Model_Mysql4_Abstract
 {
 	public function _construct()
 	{
@@ -11,7 +11,7 @@ class InverseParadox_MenuManager_Model_Mysql4_Menuitem extends Mage_Core_Model_M
 	 * Logic performed before saving the model
 	 *
 	 * @param Mage_Core_Model_Abstract $object
-	 * @return InverseParadox_MenuManager_Model_Mysql4_Menuitem
+	 * @return Studioraz_MenuManager_Model_Mysql4_Menuitem
 	 */
 	protected function _beforeSave(Mage_Core_Model_Abstract $object)
 	{
@@ -62,10 +62,10 @@ class InverseParadox_MenuManager_Model_Mysql4_Menuitem extends Mage_Core_Model_M
 	/**
 	 * Retrieve the menu model associated with the item
 	 *
-	 * @param InverseParadox_MenuManager_Model_Menuitem $item
-	 * @return InverseParadox_MenuManager_Model_Menu
+	 * @param Studioraz_MenuManager_Model_Menuitem $item
+	 * @return Studioraz_MenuManager_Model_Menu
 	 */
-	public function getMenu(InverseParadox_MenuManager_Model_Menuitem $item)
+	public function getMenu(Studioraz_MenuManager_Model_Menuitem $item)
 	{
 		if ($item->getMenuId()) {
 			$menu = Mage::getModel('ipmenumanager/menu')->load($item->getMenuId());

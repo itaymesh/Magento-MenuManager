@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Adminhtml_MenuitemController extends Mage_Adminhtml_Controller_Action
+class Studioraz_MenuManager_Adminhtml_MenuitemController extends Mage_Adminhtml_Controller_Action
 {
 	public function indexAction()
 	{
@@ -145,7 +145,7 @@ class InverseParadox_MenuManager_Adminhtml_MenuitemController extends Mage_Admin
 	/**
 	 * Initialise the item model
 	 *
-	 * @return null|InverseParadox_MenuManager_Model_Item
+	 * @return null|Studioraz_MenuManager_Model_Item
 	 */
 	protected function _initMenuitemModel()
 	{

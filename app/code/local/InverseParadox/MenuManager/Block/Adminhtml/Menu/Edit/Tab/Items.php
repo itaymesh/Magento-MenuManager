@@ -1,6 +1,6 @@
 <?php
 
-class InverseParadox_MenuManager_Block_Adminhtml_Menu_Edit_Tab_Items 
+class Studioraz_MenuManager_Block_Adminhtml_Menu_Edit_Tab_Items
 	extends Mage_Adminhtml_Block_Widget_Grid 
 {
 	public function __construct()
@@ -52,7 +52,7 @@ class InverseParadox_MenuManager_Block_Adminhtml_Menu_Edit_Tab_Items
 			'header'		=> $this->__('Path'),
 			'align'			=> 'left',
 			'index'			=> 'path',
-			'renderer'		=> 'InverseParadox_MenuManager_Block_Adminhtml_Renderer_Path',
+			'renderer'		=> 'Studioraz_MenuManager_Block_Adminhtml_Renderer_Path',
 		));
 
 		$this->addColumn('type', array(
