@@ -1,4 +1,9 @@
-<li class="<?php echo $this->getClass(); ?>">
-    <a href="<?php echo $this->getLink(); ?>"><?php echo $this->getTitle(); ?></a>
+<?php
+$currentUrl = rtrim(Mage::helper('core/url')->getCurrentUrl(),'/');
+$link = rtrim($this->getLink(),'/');
+?>
+
+<li <?php if($this->getClass()) :?>class="<?php echo $this->getClass();?>"<?php endif;?>>
+    <a href="<?php echo $link; ?>"<?php if($link == $currentUrl):?> class="active"<?php endif?>><?php echo $this->getTitle(); ?></a>
     <?php echo $this->getChildren(); ?>
 </li>
