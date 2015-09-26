@@ -3,6 +3,21 @@
 class Studioraz_MenuManager_Block_View extends Mage_Core_Block_Template
 {
 
+
+	protected function _construct()
+	{
+		$this->addData(array(
+			'cache_lifetime'=> 86400, // (seconds) data lifetime in the cache
+			'cache_tags' => array(
+				Mage_Core_Model_Store::CACHE_TAG,
+				Mage_Cms_Model_Block::CACHE_TAG,
+				Mage_Catalog_Model_Product::CACHE_TAG,
+				Mage_Catalog_Model_Category::CACHE_TAG
+			)
+		));
+	}
+
+
 	/**
 	 * Determine whether a valid menu is set
 	 *

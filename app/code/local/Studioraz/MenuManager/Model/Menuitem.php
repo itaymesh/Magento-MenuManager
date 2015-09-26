@@ -34,35 +34,6 @@ class Studioraz_MenuManager_Model_Menuitem extends Mage_Core_Model_Abstract
 		return $this->getData('parent_item');
 	}
 
-	/**
-	 * Retrieve full category path
-	 *
-	 * @return string
-	 */
-	public function getPath()
-	{
-		if (!$this->getData('path')) {
-			$path = array();
-			$path[] = $this->getTitle();
-			if ($this->getParent() != 0) {
-				$lowest_level = false;
-				$parent = $this->getParentItem();
-				while (!$lowest_level) {
-					$path[] = $parent->getTitle();
-					if ($parent->getParent() != 0) {
-						$parent = $parent->getParentItem();
-					} else {
-						$lowest_level = true;
-					}
-				}	
-			}
-			$path = array_reverse($path);
-			$path = implode(' > ', $path);
-			$this->setData('path', $path);
-		}
-		return $this->getData('path');
-	}
-
 
 	public function getChildren($includeDisabled = false)
 	{
@@ -73,79 +44,51 @@ class Studioraz_MenuManager_Model_Menuitem extends Mage_Core_Model_Abstract
 	}
 
 
-	/**
-	 * Determine whether the item has a valid URL
-	 *
-	 * @return bool
-	 */
-	public function hasUrl()
+
+	public function renderItem()
 	{
-		return strlen($this->getUrl()) > 1;
+		$block = Mage::app()->getLayout()
+		              ->createBlock('ipmenumanager/item')
+		              ->setItem($this);
+		return $block->toHtml();
 	}
 
-
-	/**
-	 * Retrieve the URL
-	 * This converts relative URL's to absolute
-	 *
-	 * @return string
-	 */
-	public function getUrl()
-	{
-		if ($this->_getData('url')) {
-			if (strpos($this->_getData('url'), 'http://') === false && strpos($this->_getData('url'), 'https://') === false) {
-				$this->setUrl(Mage::getBaseUrl() . ltrim($this->_getData('url'), '/ '));
-			}
-		}
-
-		return $this->_getData('url');
-	}
-
-	/**
-	 * Retrieve the magento category url
-	 *
-	 * @return string
-	 */
-	public function getCategoryUrl()
-	{
-		if (!$this->getData('category_url')) {
-			if ($this->getData('cat_id')) {
-				if ($page = Mage::getModel('cms/page')->load($this->getData('cat_id'))) {
-
-				}
-				$url = Mage::getUrl($this->getData('cat_id'));
-				$this->setData('category_url', $url);
-			}
-		}
-		return $this->getData('category_url');
-	}
-	
 
 	/**
 	 * Retrieve the link based on type
 	 *
-	 * @return string
+	 * @return false|mixed
 	 */
 	public function getLink()
 	{
-		if ($this->_getData('type') == 'url') {
-			return $this->getUrl();
-		} else if ($this->_getData('type') == 'category') {
-			return $this->getCategoryUrl();
-		} else if ($this->_getData('type') == 'category_children') {
-			return $this->getCategoryChildren();
-		} else {
-			return Mage::getUrl($this->getData('type'));
+		if ($renderer = $this->_getRenderer($this->getType())) {
+			return $renderer->setItem($this)->render();
 		}
+
+		return false;
 	}
 
-
-	public function renderItem()
+	/**
+	 * Retrieves the rendering class
+	 * If class based on $type isn't found, returns default renderer
+	 *
+	 * @param string $type
+	 * @return Studioraz_MenuManager_Model_Item_Renderer_Abstract
+	 */
+	protected function _getRenderer($type)
 	{
-		$block = Mage::getSingleton('core/layout')
-		              ->createBlock('ipmenumanager/item')
-		              ->setItem($this);
-		return $block->toHtml();
+		$types = array($type, 'default');
+		$baseDir = Mage::getModuleDir('', 'Studioraz_MenuManager') . DS . 'Model' . DS . 'Item' . DS . 'Renderer' . DS;
+
+		foreach($types as $type) {
+			$classFile = $baseDir . uc_words($type, DS) . '.php';
+
+			if (is_file($classFile) && ($renderer = Mage::getModel('ipmenumanager/item_renderer_' . $type)) !== false) {
+				return $renderer;
+			}
+		}
+
+		return false;
 	}
 
 }

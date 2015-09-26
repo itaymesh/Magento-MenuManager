@@ -26,6 +26,12 @@ class Studioraz_MenuManager_Block_Item extends Mage_Core_Block_Template
     }
 
 
+    public function getIsActive() {
+
+        return  rtrim(Mage::helper('core/url')->getCurrentUrl(),'/') == rtrim($this->getLink(),'/');
+
+    }
+
     public function getLink()
     {
         return $this->getItem()->getLink();

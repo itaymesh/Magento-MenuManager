@@ -65,6 +65,8 @@ class Studioraz_MenuManager_Adminhtml_MenuitemController extends Mage_Adminhtml_
 				->setId($this->getRequest()->getParam('id'));
 
 			try {
+				$menuitemType = $this->getRequest()->getPost('menuitem_type');
+
 				$item->save();
 				$this->_getSession()->addSuccess($this->__('Menu Item was saved'));
 			}

@@ -55,17 +55,26 @@ class Studioraz_MenuManager_Block_Adminhtml_Menuitem_Edit_Tab_Form extends Mage_
 			'values'		=> $this->_getLinkTypes(),
 		));
 
-		$url = $fieldset->addField('url', 'text', array(
-			'name' 		=> 'url',
+		$raw_url = $fieldset->addField('raw_url', 'text', array(
+			'name' 		=> 'raw_url',
 			'label' 	=> $this->__('URL'),
-			'title' 	=> $this->__('URL')
+			'title' 	=> $this->__('URL'),
+			'required' => true
 		));
 
-		$cat_id = $fieldset->addField('cat_id', 'select', array(
-			'name' 		=> 'cat_id',
+		$cat_id = $fieldset->addField('category_id', 'text', array(
+			'name' 		=> 'category_id',
+			'label' 	=> $this->__('Category Id'),
+			'title' 	=> $this->__('Category Id'),
+			'required' => true
+		));
+
+		$cms_page = $fieldset->addField('cms_page', 'select', array(
+			'name' 		=> 'cms_page',
 			'label' 	=> $this->__('Cms Page'),
 			'title' 	=> $this->__('Cms Page'),
-			'values'    => Mage::getModel('cms/page')->getCollection()->toOptionArray()
+			'values'    => Mage::getModel('cms/page')->getCollection()->toOptionArray(),
+			'required' => true
 		));
 
 		$fieldset->addField('parent', 'select', array(
@@ -97,25 +106,27 @@ class Studioraz_MenuManager_Block_Adminhtml_Menuitem_Edit_Tab_Form extends Mage_
 			'value' => 1
 		));
 
+
 		$this->setChild('form_after', $this->getLayout()->createBlock('adminhtml/widget_form_element_dependence')
             ->addFieldMap($type->getHtmlId(), $type->getName())
-            ->addFieldMap($cat_id->getHtmlId(), $cat_id->getName())
-            ->addFieldMap($url->getHtmlId(), $url->getName())
+            ->addFieldMap($cms_page->getHtmlId(), $cms_page->getName())
+            ->addFieldMap($raw_url->getHtmlId(), $raw_url->getName())
+			->addFieldMap($cat_id->getHtmlId(), $cat_id->getName())
             ->addFieldDependence(
-                $url->getName(),
+	            $raw_url->getName(),
                 $type->getName(),
                 'url'
             )
             ->addFieldDependence(
+                $cms_page->getName(),
+                $type->getName(),
+                'page'
+            )
+           ->addFieldDependence(
                 $cat_id->getName(),
                 $type->getName(),
                 'category'
             )
-           /* ->addFieldDependence(
-                $cat_id->getName(),
-                $type->getName(),
-                'category_children'
-            )*/
         );
 
 		if ($item = Mage::registry('ipmenumanager_menuitem')) {
@@ -148,30 +159,29 @@ class Studioraz_MenuManager_Block_Adminhtml_Menuitem_Edit_Tab_Form extends Mage_
 		$menu_id = $this->getRequest()->getParam('menuid');
 		$menu = Mage::getModel('ipmenumanager/menu')->load($menu_id);
 
-		$options = array('' => $this->__('-- Please Select --'));
-		$other_options = $menu->getMenuitemOptionArray();
-		$options = array_merge($options, $menu->getMenuitemOptionArray());
+		$options = array_merge(
+			array('' => $this->__('-- Please Select --')),
+			$menu->getMenuitemOptionArray()
+		);
 
 		return $options;
 	}
 
 	protected function _getLinkTypes() {
-		// $options = array(
-		// 	'' => $this->__('-- Please Select --'),
-		// 	'url' => 'URL',
-		// 	'path' => 'Magento Path',
-		// 	'category' => 'Category'
-		// );
 		$options = array(
 			'' => $this->__('-- Please Select --'),
 			'url' => 'URL',
-            'category' => 'Page',
+            'page' => 'CMS Page',
+			'category' => 'Category Id'
+			/*
             'customer/account' => 'Customer Account',
             'customer/account/login' => 'Login',
             'customer/account/logout' => 'Logout',
             'wishlist' => 'Wishlist',
             'checkout/cart' => 'Cart'
+			*/
 		);
 		return $options;
 	}
+
 }
